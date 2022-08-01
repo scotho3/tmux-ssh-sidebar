@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPTS_DIR="$CURRENT_DIR/scripts"
 
 source "$SCRIPTS_DIR/helpers.sh"
@@ -15,8 +15,8 @@ set_default_key_binding_options() {
 	local tree_position="$(tree_position)"
 	local tree_width="$(tree_width)"
 
-	set_tmux_option "${VAR_KEY_PREFIX}-${tree_key}" "ssf | ${tree_pager},${tree_position},${tree_width}"
-	set_tmux_option "${VAR_KEY_PREFIX}-${tree_focus_key}" "ssf | ${tree_pager},${tree_position},${tree_width},focus"
+	set_tmux_option "${VAR_KEY_PREFIX}-${tree_key}" "$tree_command | ${tree_pager},${tree_position},${tree_width}"
+	set_tmux_option "${VAR_KEY_PREFIX}-${tree_focus_key}" "$tree_command | ${tree_pager},${tree_position},${tree_width},focus"
 }
 
 set_key_bindings() {
