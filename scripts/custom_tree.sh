@@ -12,6 +12,7 @@ then
 else
 		echo "SSH session started, connecting to" $host
 		tmux send-keys -t ! "ssh $host" C-m
+		tmux select-pane -t !
 fi
 
 }
