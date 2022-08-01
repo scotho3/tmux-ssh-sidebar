@@ -10,7 +10,7 @@ if [ -z $host ]
 then
 		return 1
 else
-		echo "SSH session started, connecting to" $host
+		tmux send-keys -t !	echo "SSH session started, connecting to $host" C-m
 		tmux send-keys -t ! "ssh $host" C-m
 		tmux select-pane -t !
 fi
