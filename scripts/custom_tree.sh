@@ -11,7 +11,7 @@ then
 		return 1
 else
 		echo "SSH session started, connecting to" $host
-		tmux send-keys -t -l ssh $host
+		tmux send-keys -t last "ssh $host" C-m
 fi
 
 }
